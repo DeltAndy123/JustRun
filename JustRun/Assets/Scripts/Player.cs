@@ -89,6 +89,15 @@ public class Player : MonoBehaviour
             _anim.SetBool("onGround", true);
         }
     }
+    
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (!IsOnGround())
+        {
+            _canJump = false;
+            _anim.SetBool("onGround", false);
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D triggerCollider)
     {
