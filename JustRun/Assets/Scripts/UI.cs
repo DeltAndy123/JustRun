@@ -9,11 +9,12 @@ public class UI : MonoBehaviour
 {
     public Button startButton;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
         startButton.onClick.AddListener(MainMenu);
+
     }
+
 
     public void MainMenu()
     {
