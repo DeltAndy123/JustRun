@@ -2559,7 +2559,7 @@ Transform:
   m_GameObject: {fileID: 1088841472}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.41, y: -0.86, z: -5}
+  m_LocalPosition: {x: -3.56, y: -0.01, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3425,6 +3425,7 @@ Transform:
   - {fileID: 1863981656}
   - {fileID: 1893219818}
   - {fileID: 880104632}
+  - {fileID: 1773381905}
   - {fileID: 33142309}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3523,6 +3524,7 @@ GameObject:
   - component: {fileID: 1773381905}
   - component: {fileID: 1773381904}
   - component: {fileID: 1773381903}
+  - component: {fileID: 1773381906}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -3591,16 +3593,16 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2524c65ffcd6649609391c87eac7b101, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -1977289549, guid: 2524c65ffcd6649609391c87eac7b101, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.56, y: 1.28}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1773381905
@@ -3611,13 +3613,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773381902}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.9, y: 0.4, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.570002, y: 0.23, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1692845523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1773381906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773381902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d148c1fd12f6439d8ed96a81dafec2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!1 &1820360903
 GameObject:
   m_ObjectHideFlags: 0
@@ -4348,4 +4363,3 @@ SceneRoots:
   - {fileID: 441068692}
   - {fileID: 377389552}
   - {fileID: 1560717213}
-  - {fileID: 1773381905}
