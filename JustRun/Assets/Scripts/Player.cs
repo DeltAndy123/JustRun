@@ -21,8 +21,8 @@ public class Player : MonoBehaviour
     private InputAction _jumpAction;
     
     // Other variables
-    private bool _canJump = false;
-    private JumpOrb _touchingJumpOrb = null;
+    private bool _canJump;
+    private JumpOrb _touchingJumpOrb;
     private float _jumpOrbStrength;
     
     // Start is called before the first frame update
