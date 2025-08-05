@@ -6,6 +6,7 @@ public class Parallax : MonoBehaviour
 {
     private float length, startPos;
     public GameObject cam;
+    // Negative number, closer to 0 = slower, further from 0 = faster
     public float parallaxEffect;
 
 

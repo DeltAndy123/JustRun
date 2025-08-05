@@ -60,6 +60,19 @@ public class Player : MonoBehaviour
         _rb.velocity = new Vector2(xVelocity * speed, yVelocity);
         _anim.SetFloat("xSpeed", Mathf.Abs(xVelocity));
         _anim.SetFloat("yVelocity", yVelocity);
+
+        if (xVelocity > 0)
+        {
+            // Right
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y,
+                transform.localScale.z);
+        }
+        else if (xVelocity < 0)
+        {
+            // Left
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y,
+                transform.localScale.z);
+        }
     }
 
     
