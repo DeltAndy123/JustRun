@@ -8,15 +8,13 @@ using TMPro;
 public class UI : MonoBehaviour
 {
     public Button startButton;
-
+    
     private void Start()
     {
         startButton.onClick.AddListener(MainMenu);
-
     }
 
-
-    public void MainMenu()
+    private void MainMenu()
     {
         SceneManager.LoadScene("MainLevel");
     }

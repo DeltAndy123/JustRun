@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -72,6 +73,11 @@ public class Player : MonoBehaviour
             // Left
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y,
                 transform.localScale.z);
+        }
+
+        if (InputSystem.actions.FindAction("Restart").WasPressedThisFrame())
+        {
+            SceneManager.LoadScene("MainLevel");
         }
     }
 
