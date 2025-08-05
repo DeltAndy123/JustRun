@@ -80,6 +80,7 @@ public class Player : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheckPoint.position, 0.15f, platformLayer);
     }
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
