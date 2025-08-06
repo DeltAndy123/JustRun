@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public Image damageFlash;
     public float damageFlashTime = 0.5f;
     public float damageFlashInitialAlpha = 0.75f;
+    public Laser laser;
         
     
     // Components
@@ -122,6 +123,11 @@ public class Player : MonoBehaviour
         if (triggerCollider.gameObject.CompareTag("Death"))
         {
             SceneManager.LoadScene("Lose");
+        }
+
+        if (triggerCollider.gameObject.CompareTag("Laser"))
+        {
+            TakeDamage();
         }
 
         var orb = triggerCollider.GetComponent<JumpOrb>();
