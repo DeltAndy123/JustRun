@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private async void OnTriggerEnter2D(Collider2D triggerCollider)
+    private void OnTriggerEnter2D(Collider2D triggerCollider)
     {
         if (triggerCollider.gameObject.CompareTag("Death"))
         {
