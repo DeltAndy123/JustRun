@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4823536285998252103}
   - component: {fileID: 4601039147541939747}
   - component: {fileID: 8499877966005511992}
+  - component: {fileID: -8954158073006656832}
   m_Layer: 6
   m_Name: FallingPlatformShort
   m_TagString: Untagged
@@ -172,3 +173,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUntilFall: 0.25
+--- !u!114 &-8954158073006656832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8571100343060041317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4f9452f080842309c97e7c7fefa205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yLevel: -10
+  despawnAbove: 0
