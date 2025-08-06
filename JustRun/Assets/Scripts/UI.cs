@@ -11,11 +11,13 @@ public class UI : MonoBehaviour
     
     private void Start()
     {
-        startButton.onClick.AddListener(MainMenu);
+        startButton.onClick.AddListener(MainLevel);
     }
 
-    private void MainMenu()
+    private void MainLevel()
     {
         SceneManager.LoadScene("MainLevel");
     }
+
+
 }
