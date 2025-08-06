@@ -15,6 +15,12 @@ public class Player : MonoBehaviour
     public float jumpStrength = 6;
     public LayerMask platformLayer;
     public Transform groundCheckPoint;
+    public int maxHits = 4;
+    public List<GameObject> cracks;
+    public Image damageFlash;
+    public float damageFlashTime = 0.5f;
+    public float damageFlashInitialAlpha = 0.75f;
+        
     
     // Components
     private Rigidbody2D _rb;
@@ -28,6 +34,9 @@ public class Player : MonoBehaviour
     private bool _canJump;
     private JumpOrb _touchingJumpOrb;
     private float _jumpOrbStrength;
+
+    private int _hitsTaken;
+    private float _damageFlashAlpha;
     
     // Start is called before the first frame update
     void Start()
@@ -78,15 +87,11 @@ public class Player : MonoBehaviour
                 transform.localScale.z);
         }
 
-        if (InputSystem.actions.FindAction("Restart").WasPressedThisFrame())
-        {
-            SceneManager.LoadScene("MainLevel");
-        }
 
+        if (_damageFlashAlpha > 0) _damageFlashAlpha -= Time.deltaTime / damageFlashTime / damageFlashInitialAlpha;
+        damageFlash.color = new Color(damageFlash.color.r, damageFlash.color.g, damageFlash.color.b, _damageFlashAlpha);
     }
-
-
-
+    
 
     private bool IsOnGround()
     {
@@ -116,8 +121,6 @@ public class Player : MonoBehaviour
     {
         if (triggerCollider.gameObject.CompareTag("Death"))
         {
-
-
             SceneManager.LoadScene("Lose");
         }
 
@@ -126,8 +129,6 @@ public class Player : MonoBehaviour
 
         _touchingJumpOrb = orb;
         _jumpOrbStrength = orb.jumpStrength;
-
-
     }
 
     private void OnTriggerExit2D(Collider2D triggerCollider)
@@ -136,5 +137,20 @@ public class Player : MonoBehaviour
         if (orb == null) return;
         
         _touchingJumpOrb = null;
+    }
+
+
+    public void TakeDamage()
+    {
+        _damageFlashAlpha = damageFlashInitialAlpha;
+        _hitsTaken++;
+        if (_hitsTaken >= maxHits)
+        {
+            SceneManager.LoadScene("Lose");
+        }
+        else
+        {
+            cracks[_hitsTaken - 1].SetActive(true);
+        }
     }
 }

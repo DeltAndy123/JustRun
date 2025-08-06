@@ -1,30 +1,43 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class LoseScreen : MonoBehaviour
 {
     public Button restart;
     public Button mainMenu;
-    // Start is called before the first frame update
-    void Start()
+    public Image damageFlash;
+    public float damageFlashTime = 0.5f;
+    public float damageFlashInitialAlpha = 0.75f;
+
+    private float _damageFlashAlpha;
+
+    private void Start()
     {
+        _damageFlashAlpha = damageFlashInitialAlpha;
+        damageFlash.color = new Color(damageFlash.color.r, damageFlash.color.g, damageFlash.color.b, _damageFlashAlpha);
+        
         restart.onClick.AddListener(MainLevel);
         mainMenu.onClick.AddListener(StartScreen);
     }
 
-    void MainLevel()
+    private void Update()
+    {
+        if (_damageFlashAlpha > 0) _damageFlashAlpha -= Time.deltaTime / damageFlashTime / damageFlashInitialAlpha;
+        else damageFlash.gameObject.SetActive(false);
+        damageFlash.color = new Color(damageFlash.color.r, damageFlash.color.g, damageFlash.color.b, _damageFlashAlpha);
+    }
+
+    private void MainLevel()
     {
         SceneManager.LoadScene("MainLevel");
     }
 
-    void StartScreen()
+    private void StartScreen()
     {
         SceneManager.LoadScene("Start");
     }
-
-
 }

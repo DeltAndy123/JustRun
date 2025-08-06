@@ -5,6 +5,7 @@ public class FallTrigger : MonoBehaviour
 {
     // The obstacle that falls when this trigger is touched
     public Rigidbody2D obstacle;
+    public float gravityScale = 1;
 
     private void Start()
     {
@@ -14,9 +15,9 @@ public class FallTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D triggerCollider)
     {
-        if (triggerCollider.CompareTag("Player"))
+        if (triggerCollider.CompareTag("Player") && obstacle != null)
         {
-            obstacle.gravityScale = 1;
+            obstacle.gravityScale = gravityScale;
             obstacle.constraints = RigidbodyConstraints2D.FreezePositionX;
         }
     }
