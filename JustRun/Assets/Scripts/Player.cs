@@ -2,8 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
+
 
 public class Player : MonoBehaviour
 {
@@ -79,9 +82,12 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("MainLevel");
         }
+
     }
 
-    
+
+
+
     private bool IsOnGround()
     {
         return Physics2D.OverlapCircle(groundCheckPoint.position, 0.15f, platformLayer);
@@ -106,13 +112,22 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D triggerCollider)
+    private async void OnTriggerEnter2D(Collider2D triggerCollider)
     {
+        if (triggerCollider.gameObject.CompareTag("Death"))
+        {
+
+
+            SceneManager.LoadScene("Lose");
+        }
+
         var orb = triggerCollider.GetComponent<JumpOrb>();
         if (orb == null) return;
 
         _touchingJumpOrb = orb;
         _jumpOrbStrength = orb.jumpStrength;
+
+
     }
 
     private void OnTriggerExit2D(Collider2D triggerCollider)
