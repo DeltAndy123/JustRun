@@ -15,6 +15,7 @@ public class Checkpoint : MonoBehaviour
     private Vector3 _checkpointEnemyPosition;
     private Vector3 _checkpointBottomBoundPosition;
     private Vector3 _checkpointRightBoundPosition;
+    private Vector3 _checkpointEnemyArmPosition;
     
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class Checkpoint : MonoBehaviour
         _checkpointEnemyPosition = GameManager.instance.enemy.position;
         _checkpointBottomBoundPosition = GameManager.instance.cameraBottomBound.position;
         _checkpointRightBoundPosition = GameManager.instance.cameraRightBound.position;
+        _checkpointEnemyArmPosition = GameManager.instance.enemyArm.position;
         
         _renderer.color = activeTint;
         GameManager.ActivateCheckpoint(this);
@@ -56,5 +58,9 @@ public class Checkpoint : MonoBehaviour
     public Vector3 GetCameraRightBoundPosition()
     {
         return _checkpointRightBoundPosition;
+    }
+    public Vector3 GetEnemyArmPosition()
+    {
+        return _checkpointEnemyArmPosition;
     }
 }

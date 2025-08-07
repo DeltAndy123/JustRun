@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public Transform enemy;
     public Transform cameraBottomBound;
     public Transform cameraRightBound;
+    public Transform enemyArm;
 
     public static GameManager instance;
     
@@ -38,5 +39,6 @@ public class GameManager : MonoBehaviour
         instance.enemy.position = instance._currentCheckpoint.GetEnemyPosition();
         instance.cameraBottomBound.position = instance._currentCheckpoint.GetCameraBottomBoundPosition();
         instance.cameraRightBound.position = instance._currentCheckpoint.GetCameraRightBoundPosition();
+        instance.enemyArm.position = instance._currentCheckpoint.GetEnemyArmPosition();
     }
 }
