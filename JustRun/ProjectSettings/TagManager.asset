@@ -8,11 +8,12 @@ TagManager:
   - LaserTrigger
   - Laser
   - OutOfScreen
+  - PositionY
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Arm
   - Water
   - UI
   - Platform
@@ -44,4 +45,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemy
+    uniqueID: 3550083297
+    locked: 0
+  - name: Arm
+    uniqueID: 3369248501
+    locked: 0
+  - name: Clouds
+    uniqueID: 131256375
     locked: 0
