@@ -120,12 +120,25 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D triggerCollider)
     {
-        if (triggerCollider.gameObject.CompareTag("Death"))
+        if (triggerCollider.CompareTag("Death"))
         {
             SceneManager.LoadScene("Lose");
         }
 
-        if (triggerCollider.gameObject.CompareTag("Laser"))
+        if (triggerCollider.CompareTag("OutOfScreen"))
+        {
+            if (GameManager.HasCheckpoint())
+            {
+                TakeDamage();
+                GameManager.GoToCheckpoint();
+            }
+            else
+            {
+                SceneManager.LoadScene("Lose");
+            }
+        }
+
+        if (triggerCollider.CompareTag("Laser"))
         {
             TakeDamage();
         }
