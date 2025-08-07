@@ -12,7 +12,6 @@ public class DespawnAtYLevel : MonoBehaviour
     
     private void Update()
     {
-        print(transform.position.y);
         if ((despawnAbove && transform.position.y > yLevel) || (!despawnAbove && transform.position.y < yLevel))
         {
             Destroy(gameObject);

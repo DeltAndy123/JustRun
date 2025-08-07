@@ -317,4 +317,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle: {fileID: 1670557062739452030}
-  gravityScale: 1
+  gravityScale: 4
