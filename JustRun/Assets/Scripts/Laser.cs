@@ -11,7 +11,7 @@ public class Laser : MonoBehaviour
     public void Update()
     {
         transform.localScale = new Vector3(transform.localScale.x + .25f, transform.localScale.y, transform.localScale.z);
-        transform.Translate(Vector3.right * speed * Time.deltaTime);
+        transform.Translate(speed * Time.deltaTime * Vector3.right);
     }
 
 
