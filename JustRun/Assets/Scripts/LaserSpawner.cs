@@ -29,12 +29,12 @@ public class LaserSpawner : MonoBehaviour
             
             _anim.SetBool("attacking", true);
             
-            Invoke("ShootLaser", 3);
+            Invoke("ShootLaser", 1.5f);
             
             GameObject overlay = Instantiate(laserOverlay,
                 new Vector3(_cam.transform.position.x, transform.GetChild(0).transform.position.y,
                     laserOverlay.transform.position.z), laserOverlay.transform.rotation);
-            Destroy(overlay, 3);
+            Destroy(overlay, 1.5f);
         }
     }
 
