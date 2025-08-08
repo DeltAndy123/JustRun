@@ -9,6 +9,7 @@ TagManager:
   - Laser
   - OutOfScreen
   - PositionY
+  - End
   layers:
   - Default
   - TransparentFX

@@ -9209,6 +9209,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1773381902}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 0.25
       objectReference: {fileID: 0}
@@ -10231,6 +10235,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1773381902}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 0.25
       objectReference: {fileID: 0}
@@ -10792,7 +10800,7 @@ GameObject:
   - component: {fileID: 846475794}
   m_Layer: 0
   m_Name: End
-  m_TagString: Untagged
+  m_TagString: End
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11231,6 +11239,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1773381902}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 0.1
       objectReference: {fileID: 0}
@@ -11427,6 +11439,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1773381902}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 1
       objectReference: {fileID: 0}
@@ -11560,6 +11576,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1773381902}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 1
@@ -11907,6 +11927,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1773381902}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 0.25
       objectReference: {fileID: 0}
@@ -12072,7 +12096,7 @@ Transform:
   m_GameObject: {fileID: 1088841472}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 0, z: -5}
+  m_LocalPosition: {x: -4.5, y: -0.1, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12105,6 +12129,7 @@ MonoBehaviour:
   damageFlash: {fileID: 861858044}
   damageFlashTime: 1
   damageFlashInitialAlpha: 0.75
+  end: {fileID: 846475793}
 --- !u!95 &1088841478
 Animator:
   serializedVersion: 5
@@ -12237,6 +12262,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1773381902}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 0.25
@@ -12554,6 +12583,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1773381902}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 0.1
       objectReference: {fileID: 0}
@@ -12638,6 +12671,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1773381902}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 0.1
@@ -12817,6 +12854,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1773381902}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 0.1
       objectReference: {fileID: 0}
@@ -12953,6 +12994,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1773381902}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 0.25
@@ -13650,6 +13695,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1773381902}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 0.1
       objectReference: {fileID: 0}
@@ -14057,6 +14106,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1773381902}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 1
@@ -14876,6 +14929,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1773381902}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 0.1
@@ -16723,6 +16780,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1773381902}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 0.25
       objectReference: {fileID: 0}
@@ -16889,6 +16950,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1773381902}
+    - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
       value: 0.25

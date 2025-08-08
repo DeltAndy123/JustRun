@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public Image damageFlash;
     public float damageFlashTime = 0.5f;
     public float damageFlashInitialAlpha = 0.75f;
+    public GameObject end;
         
     
     // Components
@@ -155,6 +156,10 @@ public class Player : MonoBehaviour
             TakeDamage();
         }
 
+        if (triggerCollider.CompareTag("End"))
+        {
+            SceneManager.LoadScene("Win");
+        }
         var orb = triggerCollider.GetComponent<JumpOrb>();
         if (orb == null) return;
 
