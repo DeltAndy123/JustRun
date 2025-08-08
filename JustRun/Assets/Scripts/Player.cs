@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 
 public class Player : MonoBehaviour
@@ -20,12 +22,13 @@ public class Player : MonoBehaviour
     public Image damageFlash;
     public float damageFlashTime = 0.5f;
     public float damageFlashInitialAlpha = 0.75f;
-    public GameObject end;
+    public float lastHitVignetteIntensity = 0.5f;
         
     
     // Components
     private Rigidbody2D _rb;
     private Animator _anim;
+    private Vignette _vignette;
     
     // Input actions
     private InputAction _moveAction;
@@ -40,7 +43,6 @@ public class Player : MonoBehaviour
     private int _hitsTaken;
     private float _damageFlashAlpha;
     
-    // Start is called before the first frame update
     void Start()
     {
         _moveAction = InputSystem.actions.FindAction("Move");
@@ -48,6 +50,9 @@ public class Player : MonoBehaviour
         
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
+
+        FindObjectOfType<Volume>().profile.TryGet(out _vignette);
+        _vignette.intensity.value = 0;
     }
 
     // Update is called once per frame
@@ -188,5 +193,24 @@ public class Player : MonoBehaviour
         {
             cracks[_hitsTaken - 1].SetActive(true);
         }
+        
+        if (_hitsTaken == maxHits - 1)
+        {
+            // Last hit before death
+            _vignette.intensity.value = lastHitVignetteIntensity;
+        }
+    }
+
+    public void Heal()
+    {
+        _hitsTaken--;
+        if (_hitsTaken < 0)
+        {
+            _hitsTaken = 0;
+            return;
+        }
+        
+        cracks[_hitsTaken].SetActive(false);
+        _vignette.intensity.value = 0;
     }
 }

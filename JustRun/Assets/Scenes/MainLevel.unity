@@ -11296,7 +11296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4459625630695603969, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.37
+      value: 6.82
       objectReference: {fileID: 0}
     - target: {fileID: 4459625630695603969, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11348,7 +11348,7 @@ PrefabInstance:
       objectReference: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
     - target: {fileID: 6915409434785885231, guid: 9985d61afb0ea452b9fce380eebaef12, type: 3}
       propertyPath: laserLife
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12033,7 +12033,7 @@ MonoBehaviour:
   damageFlash: {fileID: 861858044}
   damageFlashTime: 1
   damageFlashInitialAlpha: 0.75
-  end: {fileID: 846475793}
+  lastHitVignetteIntensity: 0.4
 --- !u!95 &1088841478
 Animator:
   serializedVersion: 5

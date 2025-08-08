@@ -18,6 +18,8 @@ public class Checkpoint : MonoBehaviour
     private Vector3 _checkpointBottomBoundPosition;
     private Vector3 _checkpointRightBoundPosition;
     private Vector3 _checkpointEnemyArmPosition;
+
+    private bool _checkpointActivated;
     
     // Start is called before the first frame update
     void Start()
@@ -30,9 +32,12 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (!collider.CompareTag("Player")) return;
+        var player = collider.GetComponent<Player>();
+        if (player == null || _checkpointActivated) return;
         
         // Player touched checkpoint
+        _checkpointActivated = true;
+        
         _checkpointCameraPosition = _mainCamera.transform.position;
         _checkpointCameraSpeed = _mainCamera.GetComponent<CameraMove>().speed;
         _checkpointCameraTimeLeft = _mainCamera.GetComponent<CameraMove>().timeBeforeStart;
@@ -43,6 +48,8 @@ public class Checkpoint : MonoBehaviour
         
         _renderer.color = activeTint;
         GameManager.ActivateCheckpoint(this);
+        
+        player.Heal();
     }
 
     public Vector3 GetCameraPosition()
