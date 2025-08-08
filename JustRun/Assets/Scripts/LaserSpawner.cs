@@ -14,15 +14,18 @@ public class LaserSpawner : MonoBehaviour
     private Camera _cam;
     private Animator _anim;
 
+    private bool activated = false;
+
     private void Start()
     {
+        activated = false;
         _anim = arm.GetComponent<Animator>();
         _cam = FindObjectOfType<Camera>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !activated)
         {
             arm.transform.position = new Vector3(arm.transform.position.x,
                 transform.GetChild(0).transform.position.y + 1.3f, enemy.transform.position.z);
@@ -35,6 +38,7 @@ public class LaserSpawner : MonoBehaviour
                 new Vector3(_cam.transform.position.x, transform.GetChild(0).transform.position.y,
                     laserOverlay.transform.position.z), laserOverlay.transform.rotation);
             Destroy(overlay, 1.5f);
+            activated = true;
         }
     }
 
