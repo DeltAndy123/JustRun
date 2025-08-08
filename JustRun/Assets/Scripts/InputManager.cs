@@ -27,7 +27,6 @@ public class InputManager : MonoBehaviour
         if (InputSystem.actions.FindAction("Restart").WasPressedThisFrame())
         {
             SceneManager.LoadScene("MainLevel");
-
         }
     }
 }
