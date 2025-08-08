@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     public Image damageFlash;
     public float damageFlashTime = 0.5f;
     public float damageFlashInitialAlpha = 0.75f;
-    public Laser laser;
         
     
     // Components
@@ -35,6 +34,7 @@ public class Player : MonoBehaviour
     private bool _canJump;
     private JumpOrb _touchingJumpOrb;
     private float _jumpOrbStrength;
+    private bool _bufferingOrb;
 
     private int _hitsTaken;
     private float _damageFlashAlpha;
@@ -55,20 +55,32 @@ public class Player : MonoBehaviour
         var xVelocity = _moveAction.ReadValue<float>();
         float yVelocity = _rb.velocity.y;
 
-        bool startedJumping = _jumpAction.WasPressedThisFrame();
-        bool jumping = _jumpAction.IsPressed();
-        
-        if (startedJumping && _touchingJumpOrb)
+        if (_jumpAction.WasPressedThisFrame() && !IsOnGround())
         {
-            // Jump orb
-            yVelocity = _jumpOrbStrength;
+            _bufferingOrb = true;
         }
-        else if (jumping && _canJump)
+        else if (_jumpAction.WasReleasedThisFrame())
         {
-            // Jump from platform
-            yVelocity = jumpStrength;
-            _canJump = false;
-            _anim.SetBool("onGround", false);
+            _bufferingOrb = false;
+        }
+        
+        bool jumping = _jumpAction.IsPressed();
+
+        if (jumping)
+        {
+            if (_touchingJumpOrb && _bufferingOrb)
+            {
+                // Jump orb
+                yVelocity = _jumpOrbStrength;
+                _bufferingOrb = false;
+            }
+            else if (_canJump)
+            {
+                // Jump from platform
+                yVelocity = jumpStrength;
+                _canJump = false;
+                _anim.SetBool("onGround", false);
+            }
         }
         
         _rb.velocity = new Vector2(xVelocity * speed, yVelocity);

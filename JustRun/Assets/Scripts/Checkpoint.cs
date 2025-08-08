@@ -12,6 +12,8 @@ public class Checkpoint : MonoBehaviour
     private Camera _mainCamera;
 
     private Vector3 _checkpointCameraPosition;
+    private float _checkpointCameraSpeed;
+    private float _checkpointCameraTimeLeft;
     private Vector3 _checkpointEnemyPosition;
     private Vector3 _checkpointBottomBoundPosition;
     private Vector3 _checkpointRightBoundPosition;
@@ -32,6 +34,8 @@ public class Checkpoint : MonoBehaviour
         
         // Player touched checkpoint
         _checkpointCameraPosition = _mainCamera.transform.position;
+        _checkpointCameraSpeed = _mainCamera.GetComponent<CameraMove>().speed;
+        _checkpointCameraTimeLeft = _mainCamera.GetComponent<CameraMove>().timeBeforeStart;
         _checkpointEnemyPosition = GameManager.instance.enemy.position;
         _checkpointBottomBoundPosition = GameManager.instance.cameraBottomBound.position;
         _checkpointRightBoundPosition = GameManager.instance.cameraRightBound.position;
@@ -44,6 +48,16 @@ public class Checkpoint : MonoBehaviour
     public Vector3 GetCameraPosition()
     {
         return _checkpointCameraPosition;
+    }
+
+    public float GetCameraSpeed()
+    {
+        return _checkpointCameraSpeed;
+    }
+    
+    public float GetCameraTimeLeft()
+    {
+        return _checkpointCameraTimeLeft;
     }
 
     public Vector3 GetEnemyPosition()

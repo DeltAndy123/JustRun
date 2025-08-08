@@ -331,6 +331,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  initialMoveDelay: 1.25
+  acceleration: 0.005
+  maxSpeed: 4
+  timeBeforeStart: 0
 --- !u!1 &33142308
 GameObject:
   m_ObjectHideFlags: 0
@@ -6799,6 +6803,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  initialMoveDelay: 1.25
+  acceleration: 0.005
+  maxSpeed: 4
+  timeBeforeStart: 0
 --- !u!212 &245883898
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8753,7 +8761,6 @@ MonoBehaviour:
   damageFlash: {fileID: 861858044}
   damageFlashTime: 1
   damageFlashInitialAlpha: 0.75
-  laser: {fileID: 4913481857855141139, guid: cc89f1077d3d14a079206cb5ee365210, type: 3}
 --- !u!95 &1088841478
 Animator:
   serializedVersion: 5
@@ -9146,6 +9153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  initialMoveDelay: 1.25
+  acceleration: 0.005
+  maxSpeed: 4
+  timeBeforeStart: 0
 --- !u!61 &1360015557
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10349,6 +10360,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  initialMoveDelay: 1.25
+  acceleration: 0.005
+  maxSpeed: 4
+  timeBeforeStart: 0
 --- !u!60 &1773381907
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11052,6 +11067,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  initialMoveDelay: 1.25
+  acceleration: 0.005
+  maxSpeed: 4
+  timeBeforeStart: 0
 --- !u!1001 &1882867845
 PrefabInstance:
   m_ObjectHideFlags: 0

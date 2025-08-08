@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
         instance.player.transform.position = instance._currentCheckpoint.transform.position;
 
         instance._mainCamera.transform.position = instance._currentCheckpoint.GetCameraPosition();
+        CameraMove.SetAllSpeed(instance._currentCheckpoint.GetCameraSpeed());
+        CameraMove.SetAllTimeBeforeStart(instance._currentCheckpoint.GetCameraTimeLeft());
         instance.enemy.position = instance._currentCheckpoint.GetEnemyPosition();
         instance.cameraBottomBound.position = instance._currentCheckpoint.GetCameraBottomBoundPosition();
         instance.cameraRightBound.position = instance._currentCheckpoint.GetCameraRightBoundPosition();
